@@ -1,24 +1,30 @@
 return {
-	"neovim/nvim-lspconfig",
 	{
-		-- Autocompletion
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-		},
+		"MunifTanjim/nui.nvim",
 	},
 	{
-		-- Highlight, edit, and navigate code
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		config = function()
-			local treesitter = require("nvim-treesitter")
-			treesitter.setup({
-				install_dir = vim.fn.stdpath("data") .. "/site",
-			})
-			treesitter.install({
-				"templ",
-			})
-		end,
+
+		"folke/snacks.nvim",
+		priority = 1000,
+		lazy = false,
+		---@type snacks.Config
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+			image = { enabled = true },
+			-- bigfile = { enabled = true },
+			-- dashboard = { enabled = true },
+			-- explorer = { enabled = true },
+			-- indent = { enabled = true },
+			-- input = { enabled = true },
+			-- picker = { enabled = true },
+			-- notifier = { enabled = true },
+			-- quickfile = { enabled = true },
+			-- scope = { enabled = true },
+			-- scroll = { enabled = true },
+			-- statuscolumn = { enabled = true },
+			-- words = { enabled = true },
+		},
 	},
 }
